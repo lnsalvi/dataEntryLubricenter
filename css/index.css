@@ -1,0 +1,79 @@
+.cntMain {
+  display: flex;
+}
+
+.cntLeft {
+  width: 50%;
+  height: 700px;
+  margin-top: 2em;
+}
+
+.cntForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.labelsForm, .fieldsForm, .btnForm {
+  width: 500px;
+}
+
+.labelsForm {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fieldsForm {
+  padding: 1em 0;
+  font-size: 14px;
+}
+
+.btnForm {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  background: transparent;
+  background-color: #8686e0;
+  border: 2px solid #333333;
+  border-radius: 0.4em;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cntRight {
+  width: 50%;
+  height: 700px;
+  padding: 1em 1em;
+}
+
+.salesMade {
+  border: 1px solid #8b8a8a;
+  border-radius: 0.5em;
+  padding: 0.3em 0 0.3em 0.3em;
+  margin-bottom: 0.5em;
+  height: 700px;
+
+  overflow-y: auto;           /* Habilita scroll vertical si se necesita */
+  overflow-x: hidden;
+}
+
+.sale {
+  font-size: 20px;
+  margin-bottom: 0.3em;
+}
+
+.cntBtnClear {
+  display: flex;
+  justify-content: end;
+}
+
+.btnClear {
+  padding: 0.5em 0.5em;
+  background: transparent;
+  background-color: #8686e0;
+  border: 2px solid #ffffff;
+  border-radius: 0.4em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}

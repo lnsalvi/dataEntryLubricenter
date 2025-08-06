@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <title>Venta</title>
+</head>
+<body>
+
+  <div class="cntMain">
+
+    <div class="cntLeft">
+      <div class="cntForm">
+        <label for="dateOfSale" class="labelsForm">Fecha:</label>
+        <input type="date" id="dateOfSale" class="fieldsForm mb-1">
+
+        <label for="product" class="labelsForm">Producto:</label>
+        <input type="text" name="productToSalw" id="product" placeholder="Ingrese el producto......" class="fieldsForm mb-1">
+
+        <label for="price" class="labelsForm">Precio:</label>
+        <input type="number" name="priceProduct" id="price" placeholder="Ingrese el precio......" class="fieldsForm mb-1">
+
+        <label for="quantity" class="labelsForm">Cantidad:</label>
+        <input type="number" id="quantity" placeholder="Ingrese la cantidad..........." class="fieldsForm mb-2">
+
+        <button id="btnAddSale" class="btnForm">Añadir venta</button>
+        <button id="btnSendInformation" class="btnForm">Enviar informacion</button>
+      </div>
+    </div>
+
+
+    <div class="cntRight">
+      <div class="salesMade" id="cntSales">
+      </div>
+      <div class="cntBtnClear">
+        <button class="btnClear" id="btnClear">Limpiar ventas</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
