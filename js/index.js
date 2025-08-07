@@ -8,6 +8,8 @@ const Product = document.getElementById('product')
 const Price = document.getElementById('price')
 const Quantity = document.getElementById('quantity')
 
+const EXECUTION_VERSION = 'Production'
+
 /* Functions */
 const takeData = () => {
   let status = true
@@ -69,7 +71,11 @@ BtnSendInformation.addEventListener('click', async () => {
 
   let products =  productosGuardados ? JSON.parse(productosGuardados) : []
 
-    const Request = await fetch('http://localhost:3002/lubricentro', {
+  let source = EXECUTION_VERSION === 'Development' ? 'localhost:3002' : '147.79.87.55:3002'
+  
+  let APIRoute = `http://${source}/lubricentro`
+
+  const Request = await fetch(APIRoute, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -80,7 +86,8 @@ BtnSendInformation.addEventListener('click', async () => {
 
   const Response = await Request.json()
 
-  console.log(Response)
+  if (Response.message === 'I send the sales information of the day') alert('Informacion enviada correctamente')
+  else alert('Se produjo un error en el envio de las ventas del dia')
 })
 
 window.addEventListener('load', function() {
