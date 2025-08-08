@@ -71,9 +71,9 @@ BtnSendInformation.addEventListener('click', async () => {
 
   let products =  productosGuardados ? JSON.parse(productosGuardados) : []
 
-  let source = EXECUTION_VERSION === 'Development' ? 'localhost:3002' : '147.79.87.55:3002'
+  let source = EXECUTION_VERSION === 'Development' ? 'localhost:3002' : 'pjstech.online'
   
-  let APIRoute = `http://${source}/lubricentro`
+  let APIRoute = `https://${source}/lubricentro`
 
   const Request = await fetch(APIRoute, {
     method: 'POST',
