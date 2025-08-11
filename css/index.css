@@ -4,7 +4,6 @@
 
 .cntLeft {
   width: 50%;
-  height: 700px;
   margin-top: 2em;
 }
 
@@ -42,7 +41,6 @@
 
 .cntRight {
   width: 50%;
-  height: 700px;
   padding: 1em 1em;
 }
 
@@ -51,10 +49,7 @@
   border-radius: 0.5em;
   padding: 0.3em 0 0.3em 0.3em;
   margin-bottom: 0.5em;
-  height: 700px;
-
-  overflow-y: auto;           /* Habilita scroll vertical si se necesita */
-  overflow-x: hidden;
+  min-height: 100px;
 }
 
 .sale {

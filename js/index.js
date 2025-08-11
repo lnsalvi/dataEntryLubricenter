@@ -31,7 +31,7 @@ const takeData = () => {
   }
 }
 
-function addProductToLocalStorage(productToSale) {
+const addProductToLocalStorage = (productToSale) => {
   const productsInLocalStorage = localStorage.getItem('productsLubricentro')
 
   let products = productsInLocalStorage ? JSON.parse(productsInLocalStorage) : []
@@ -39,6 +39,23 @@ function addProductToLocalStorage(productToSale) {
   products.push(productToSale)
 
   localStorage.setItem('productsLubricentro', JSON.stringify(products))
+}
+
+const updateProductList = () => {
+  const productsInLocalStorage = localStorage.getItem('productsLubricentro')
+
+  let products = productsInLocalStorage ? JSON.parse(productsInLocalStorage) : []
+
+  products.forEach(product => {
+    console.log(product.nameProduct);
+    let data = `${product.dateSale} //// ${product.nameProduct}  --//--  ${product.price}  --//--  ${product.quantity}`
+
+    const newSaleP = document.createElement('p')
+    newSaleP.classList.add('sale')
+    newSaleP.textContent = data
+
+    CntSales.appendChild(newSaleP)
+  })
 }
 /* Functions */
 
@@ -64,6 +81,10 @@ BtnAddSale.addEventListener('click', () => {
 
     CntSales.appendChild(newSaleP)
   }
+
+  Product.value = ''
+  Price.value = ''
+  Quantity.value = ''
 })
 
 BtnSendInformation.addEventListener('click', async () => {
@@ -97,5 +118,7 @@ window.addEventListener('load', function() {
   const day = String(today.getDate()).padStart(2, '0')
 
   DateOfSale.value = `${year}-${month}-${day}`
+
+  updateProductList()
 })
 /* Events */
