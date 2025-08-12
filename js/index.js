@@ -8,7 +8,7 @@ const Product = document.getElementById('product')
 const Price = document.getElementById('price')
 const Quantity = document.getElementById('quantity')
 
-const EXECUTION_VERSION = 'Production'
+const EXECUTION_VERSION = 'Development'
 
 /* Functions */
 const takeData = () => {
@@ -92,9 +92,10 @@ BtnSendInformation.addEventListener('click', async () => {
 
   let products =  productosGuardados ? JSON.parse(productosGuardados) : []
 
+  let protocol = EXECUTION_VERSION === 'Development' ? 'http://' : 'https://'
   let source = EXECUTION_VERSION === 'Development' ? 'localhost:3002' : 'pjstech.online'
   
-  let APIRoute = `https://${source}/lubricentro`
+  let APIRoute = `${protocol}${source}/lubricentro`
 
   const Request = await fetch(APIRoute, {
     method: 'POST',
