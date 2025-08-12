@@ -8,7 +8,7 @@ const Product = document.getElementById('product')
 const Price = document.getElementById('price')
 const Quantity = document.getElementById('quantity')
 
-const EXECUTION_VERSION = 'Development'
+const EXECUTION_VERSION = 'Production'
 
 /* Functions */
 const takeData = () => {
